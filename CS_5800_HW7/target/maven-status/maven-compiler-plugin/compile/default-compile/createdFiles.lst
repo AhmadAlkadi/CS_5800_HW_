@@ -1,0 +1,6 @@
+MementoandMediator\ChatApplication.class
+MementoandMediator\ChatHistory.class
+MementoandMediator\MessageMemento.class
+MementoandMediator\User.class
+MementoandMediator\ChatServer.class
+MementoandMediator\Message.class
