@@ -1,0 +1,153 @@
+@startuml
+
+object "Document:testDocument" as Document {
+    characters = [char0,..,char15]
+    CharacterPropertiesFactory = factory
+}
+
+object "char0:Character" as Character0{
+    character='H'
+    CharacterProperties = prop0
+}
+object "char1:Character" as Character1{
+    character='e'
+    CharacterProperties = prop1
+}
+object "char2:Character" as Character2{
+    character='l'
+    CharacterProperties = prop1
+}
+object "char3:Character" as Character3{
+    character='l'
+    CharacterProperties = prop1
+}
+object "char4:Character" as Character4{
+    character='o'
+    CharacterProperties = prop1
+}
+object "char5:Character" as Character5{
+    character='W'
+    CharacterProperties = prop0
+}
+object "char6:Character" as Character6{
+    character='o'
+    CharacterProperties = prop1
+}
+object "char7:Character" as Character7{
+    character='r'
+    CharacterProperties = prop1
+}
+object "char8:Character" as Character8{
+    character='l'
+    CharacterProperties = prop1
+}
+object "char9:Character" as Character9{
+    character='d'
+    CharacterProperties = prop1
+}
+object "char10:Character" as Character10{
+    character='C'
+    CharacterProperties = prop2
+}
+object "char11:Character" as Character11{
+    character='S'
+    CharacterProperties = prop2
+}
+object "char12:Character" as Character12{
+    character='5'
+    CharacterProperties = prop3
+}
+object "char13:Character" as Character13{
+    character='8'
+    CharacterProperties = prop3
+}
+object "char14:Character" as Character14{
+    character='0'
+    CharacterProperties = prop3
+}
+object "char15:Character" as Character15{
+    character='0'
+    CharacterProperties = prop3
+}
+
+object "prop0:CharacterProperties" as firstCharacterProperties{
+    font="Arial"
+    color="Black"
+    size= 16
+}
+
+object "prop1:CharacterProperties" as secondCharacterProperties{
+    font="Arial"
+    color="Black"
+    size= 14
+}
+
+object "prop2:CharacterProperties" as thirdCharacterProperties{
+    font="Verdana"
+    color="Blue"
+    size= 18
+}
+
+object "prop3:CharacterProperties" as forthCharacterProperties{
+    font="Verdana"
+    color="Red"
+    size= 12
+}
+
+object "prop4:CharacterProperties" as fifthCharacterProperties{
+    font="Calibri"
+    color="Blue"
+    size= 99
+}
+
+object "factory:CharacterPropertiesFactory " as CharacterPropertiesFactory {
+    "ArialBlack16":prop0
+    "ArialBlack14":prop1
+    "VerdanaBlue18":prop2
+    "VerdanaRed12":prop3
+    "CalibriBlue99":prop4
+}
+
+Document --* Character0 : editCharacterProperties
+Document --* Character1 : addCharacter
+Document --* Character2 : addCharacter
+Document --* Character3 : addCharacter
+Document --* Character4 : addCharacter
+Document --* Character5 : addCharacter
+Document --* Character6 : addCharacter
+Document --* Character7 : addCharacter
+Document --* Character8 : addCharacter
+Document --* Character9 : addCharacter
+Document --* Character10 : editCharacterProperties
+Document --* Character11 : addCharacter
+Document --* Character12 : addCharacter
+Document --* Character13 : addCharacter
+Document --* Character14 : addCharacter
+Document --* Character15 : addCharacter
+
+Document --* CharacterPropertiesFactory
+
+fifthCharacterProperties o---- Character0
+secondCharacterProperties o---- Character1
+secondCharacterProperties o---- Character2
+secondCharacterProperties o---- Character3
+secondCharacterProperties o---- Character4 
+fifthCharacterProperties o---- Character5 
+secondCharacterProperties o---- Character6 
+secondCharacterProperties o---- Character7 
+secondCharacterProperties o---- Character8 
+secondCharacterProperties o---- Character9
+thirdCharacterProperties o---- Character10 
+thirdCharacterProperties o---- Character11 
+forthCharacterProperties o---- Character12 
+forthCharacterProperties o---- Character13 
+forthCharacterProperties o---- Character14 
+forthCharacterProperties o---- Character15 
+
+firstCharacterProperties o---- CharacterPropertiesFactory
+secondCharacterProperties o---- CharacterPropertiesFactory
+thirdCharacterProperties o---- CharacterPropertiesFactory
+forthCharacterProperties o---- CharacterPropertiesFactory 
+fifthCharacterProperties o---- CharacterPropertiesFactory 
+
+@enduml
